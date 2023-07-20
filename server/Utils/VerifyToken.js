@@ -33,3 +33,18 @@ export const verifyUser = (req,res,next)=>{
         }
     })
 }
+
+
+
+
+export const verifyAdmin = (req,res,next)=>{
+    verifyToken(req,res,next, ()=>{
+        if(req.user.isAdmin){
+            next()
+        }else{
+            if(err){
+                next(res.status(403).json("You are not authorized"))
+            }
+        }
+    })
+}
