@@ -6,6 +6,7 @@ import usersRoute from "./Routers/Users.js";
 import roomsRoute from "./Routers/Rooms.js";
 import hotelsRoute from "./Routers/Hotels.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 
 
@@ -34,7 +35,8 @@ mongoose.connection.on("connected",()=>{
 })
 
 app.use(express.json());
-app.use(cookieParser())
+app.use(cors());
+app.use(cookieParser());
 
 //? Middlewares
 app.use("/auth",authRoute);
