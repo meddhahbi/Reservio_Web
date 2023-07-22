@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from "../../Components/navbar/Navbar";
 import Header from "../../Components/Header/Header.js";
 import './List.css'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from '../../Components/SearchItem/SearchItem';
@@ -14,7 +14,7 @@ const List = () => {
 
   //console.log(location);
 
-  const [result,setResult] = useState();
+  const [result,setResult] = useState([]);
   const [loading, setLoading] = useState();
 
 
